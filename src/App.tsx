@@ -1,10 +1,5 @@
 import React from "react";
-import { Button } from "antd";
 
-const App = () => (
-  <div>
-    <Button type="primary">button</Button>
-  </div>
-);
+const App = () => <div>TODO LIST</div>;
 
 export default App;
