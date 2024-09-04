@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Input, Button } from "antd";
 
 interface TodoInputProps {
   addTodo: (text: string) => void;
@@ -21,16 +22,17 @@ const TodoInput: React.FC<TodoInputProps> = ({ addTodo }) => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
+    <div style={{ display: "flex", gap: "10px" }}>
+      <Input
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        onKeyDown={handleKeyPress} // 'Enter' 키 입력 감지
+        onKeyDown={handleKeyPress}
         placeholder="할 일을 입력하세요"
         autoFocus
       />
-      <button onClick={handleAddTodo}>추가</button>
+      <Button type="primary" onClick={handleAddTodo}>
+        추가
+      </Button>
     </div>
   );
 };

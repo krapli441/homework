@@ -1,4 +1,5 @@
 import React from "react";
+import { List } from "antd";
 import TodoItem from "./TodoItem";
 
 interface Todo {
@@ -19,16 +20,18 @@ const TodoList: React.FC<TodoListProps> = ({
   deleteTodo,
 }) => {
   return (
-    <ul>
-      {todos.map((todo) => (
+    <List
+      bordered
+      dataSource={todos}
+      renderItem={(todo) => (
         <TodoItem
           key={todo.id}
           todo={todo}
           toggleTodo={toggleTodo}
           deleteTodo={deleteTodo}
         />
-      ))}
-    </ul>
+      )}
+    />
   );
 };
 

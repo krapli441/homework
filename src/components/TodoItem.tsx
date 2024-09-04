@@ -1,4 +1,5 @@
 import React from "react";
+import { List, Checkbox, Button } from "antd";
 
 interface Todo {
   id: number;
@@ -18,18 +19,21 @@ const TodoItem: React.FC<TodoItemProps> = ({
   deleteTodo,
 }) => {
   return (
-    <li>
-      <span
-        style={{
-          textDecoration: todo.completed ? "line-through" : "none",
-          cursor: "pointer",
-        }}
-        onClick={() => toggleTodo(todo.id)}
-      >
-        {todo.text}
-      </span>
-      <button onClick={() => deleteTodo(todo.id)}>삭제</button>
-    </li>
+    <List.Item
+      actions={[
+        <Button type="link" danger onClick={() => deleteTodo(todo.id)}>
+          삭제
+        </Button>,
+      ]}
+    >
+      <Checkbox checked={todo.completed} onChange={() => toggleTodo(todo.id)}>
+        <span
+          style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+        >
+          {todo.text}
+        </span>
+      </Checkbox>
+    </List.Item>
   );
 };
 
