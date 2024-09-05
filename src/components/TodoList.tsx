@@ -20,18 +20,21 @@ const TodoList: React.FC<TodoListProps> = ({
   deleteTodo,
 }) => {
   return (
-    <List
-      bordered
-      dataSource={todos}
-      renderItem={(todo) => (
-        <TodoItem
-          key={todo.id}
-          todo={todo}
-          toggleTodo={toggleTodo}
-          deleteTodo={deleteTodo}
-        />
-      )}
-    />
+    <div style={{ maxHeight: "300px", overflowY: "auto" }}>
+      <List
+        bordered
+        dataSource={todos}
+        renderItem={(todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            toggleTodo={toggleTodo}
+            deleteTodo={deleteTodo}
+          />
+        )}
+        locale={{ emptyText: "There is no TODO" }} // ToDo가 없을 때 표시되는 텍스트
+      />
+    </div>
   );
 };
 
