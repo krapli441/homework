@@ -15,8 +15,9 @@ const TodoInput: React.FC<TodoInputProps> = ({ addTodo }) => {
     }
   };
 
-  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
+      event.preventDefault();
       handleAddTodo();
     }
   };
@@ -26,12 +27,12 @@ const TodoInput: React.FC<TodoInputProps> = ({ addTodo }) => {
       <Input
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
-        onKeyDown={handleKeyPress}
+        onKeyUp={handleKeyDown} // 'Enter' 키 입력 감지
         placeholder="할 일을 입력하세요"
         autoFocus
       />
       <Button type="primary" onClick={handleAddTodo}>
-        추가
+        +
       </Button>
     </div>
   );
