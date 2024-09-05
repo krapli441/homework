@@ -37,6 +37,7 @@ const App: React.FC = () => {
               <TodoInput addTodo={addTodo} />
               <div
                 style={{
+                  height: "100%",
                   maxHeight: "300px",
                   overflowY: "auto",
                   marginTop: "20px",
