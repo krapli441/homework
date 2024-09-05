@@ -1,10 +1,10 @@
 import React from "react";
-import { Layout, Typography } from "antd";
+import { Layout, Typography, Row, Col, Card } from "antd";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 import useTodos from "./hooks/useTodo";
 
-const { Header, Content } = Layout;
+const { Content } = Layout;
 const { Title } = Typography;
 
 const App: React.FC = () => {
@@ -12,18 +12,31 @@ const App: React.FC = () => {
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Header>
-        <Title style={{ color: "white", textAlign: "center" }}>
-          To - Do List
-        </Title>
-      </Header>
-      <Content style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
-        <TodoInput addTodo={addTodo} />
-        <TodoList
-          todos={todos}
-          toggleTodo={toggleTodo}
-          deleteTodo={deleteTodo}
-        />
+      <Content>
+        <Row justify="center" align="middle" style={{ minHeight: "100vh" }}>
+          <Col xs={24} sm={20} md={16} lg={12} xl={8}>
+            <Card
+              bordered={false}
+              style={{
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                padding: "20px",
+              }}
+            >
+              <Title
+                level={2}
+                style={{ textAlign: "center", marginBottom: "20px" }}
+              >
+                ToDo App
+              </Title>
+              <TodoInput addTodo={addTodo} />
+              <TodoList
+                todos={todos}
+                toggleTodo={toggleTodo}
+                deleteTodo={deleteTodo}
+              />
+            </Card>
+          </Col>
+        </Row>
       </Content>
     </Layout>
   );
