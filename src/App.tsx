@@ -52,7 +52,7 @@ const App: React.FC = () => {
                       height: "100%",
                     }}
                   >
-                    <Empty description="There is no TODO" />
+                    <Empty description="There is no Todo" />
                   </div>
                 ) : (
                   <TodoList
