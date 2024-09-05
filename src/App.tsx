@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Typography, Row, Col, Card } from "antd";
+import { Layout, Typography, Row, Col, Card, Empty } from "antd";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 import useTodos from "./hooks/useTodo";
@@ -23,21 +23,43 @@ const App: React.FC = () => {
                 height: "500px",
                 maxHeight: "500px",
                 overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
               }}
             >
               <Title
                 level={2}
                 style={{ textAlign: "center", marginBottom: "20px" }}
               >
-                ToDo List
+                ToDo App
               </Title>
               <TodoInput addTodo={addTodo} />
-              <div style={{ maxHeight: "300px", overflowY: "auto" }}>
-                <TodoList
-                  todos={todos}
-                  toggleTodo={toggleTodo}
-                  deleteTodo={deleteTodo}
-                />
+              <div
+                style={{
+                  maxHeight: "300px",
+                  overflowY: "auto",
+                  marginTop: "20px",
+                }}
+              >
+                {todos.length === 0 ? (
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      height: "100%",
+                    }}
+                  >
+                    <Empty description="There is no TODO" />
+                  </div>
+                ) : (
+                  <TodoList
+                    todos={todos}
+                    toggleTodo={toggleTodo}
+                    deleteTodo={deleteTodo}
+                  />
+                )}
               </div>
             </Card>
           </Col>
