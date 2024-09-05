@@ -20,6 +20,9 @@ const App: React.FC = () => {
               style={{
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                 padding: "20px",
+                height: "500px",
+                maxHeight: "500px",
+                overflow: "hidden",
               }}
             >
               <Title
@@ -29,11 +32,13 @@ const App: React.FC = () => {
                 ToDo List
               </Title>
               <TodoInput addTodo={addTodo} />
-              <TodoList
-                todos={todos}
-                toggleTodo={toggleTodo}
-                deleteTodo={deleteTodo}
-              />
+              <div style={{ maxHeight: "300px", overflowY: "auto" }}>
+                <TodoList
+                  todos={todos}
+                  toggleTodo={toggleTodo}
+                  deleteTodo={deleteTodo}
+                />
+              </div>
             </Card>
           </Col>
         </Row>
