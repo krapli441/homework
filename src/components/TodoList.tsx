@@ -32,7 +32,7 @@ const TodoList: React.FC<TodoListProps> = ({
             deleteTodo={deleteTodo}
           />
         )}
-        locale={{ emptyText: "There is no TODO" }} // ToDo가 없을 때 표시되는 텍스트
+        locale={{ emptyText: "There is no ToDo" }} // ToDo가 없을 때 표시되는 텍스트
       />
     </div>
   );
