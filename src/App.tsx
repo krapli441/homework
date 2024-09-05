@@ -26,7 +26,7 @@ const App: React.FC = () => {
                 level={2}
                 style={{ textAlign: "center", marginBottom: "20px" }}
               >
-                ToDo App
+                ToDo List
               </Title>
               <TodoInput addTodo={addTodo} />
               <TodoList
