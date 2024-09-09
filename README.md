@@ -11,9 +11,12 @@ npm run start
 ```
 
 ### 주요 컴포넌트
+https://github.com/krapli441/homework/blob/main/src/hooks/useTodo.ts   
 src/hooks/useTodo.ts   
 코드 복잡성을 줄이기 위해 사용자가 작성한 Todo를 로컬 스토리지에 저장 및 삭제하는 로직을 별도의 커스텀 훅으로 분리   
-   
+
+
+https://github.com/krapli441/homework/tree/main/src/components   
 src/components/TodoInput.tsx   
 src/components/TodoItem.tsx   
 src/components/TodoList.tsx   
