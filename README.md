@@ -16,6 +16,7 @@ src/hooks/useTodo.ts
    
 src/components/TodoInput.tsx
 src/components/TodoItem.tsx
-src/components/TodoList.tsx
+src/components/TodoList.tsx   
+
 한 개의 컴포넌트 안에 Todo 리스트에 관한 코드를 모두 넣을 수 있었으나 복잡성을 줄이기 위해   
 Todo 입력, 생성된 Todo 관리 및 확인에 관한 부분을 세 개의 컴포넌트로 분리   
